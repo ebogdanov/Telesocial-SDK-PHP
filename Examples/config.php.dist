@@ -1,0 +1,8 @@
+<?php
+
+// server host
+$serverHost = 'http://api4.bitmouth.com:8080/';
+// API key, obtained from Telesocial team
+$APIkey = '';
+
+?>

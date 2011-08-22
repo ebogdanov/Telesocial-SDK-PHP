@@ -1,0 +1,41 @@
+<!-- you can change attributes of phpunit if you know that are you doing -->
+<phpunit backupGlobals="true"
+         backupStaticAttributes="false"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="false"
+         mapTestClassNameToCoveredClassName="false"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         syntaxCheck="false"
+         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+         strict="false"
+         verbose="false">
+<php>
+    <!-- Uncomment and edit includePath with PEAR path if it is not set in your php.ini -->
+    <!--<includePath></includePath>-->
+    <!-- Telesocial server name -->
+    <const name="SERVER_NAME" value="http://api4.bitmouth.com:8080/"/>
+    <!-- API key of your application (app key in terms of documentation)  -->
+    <const name="API_KEY" value=""/>
+    <!-- Phone numbers setup (numbers should be unique!) -->
+    <!-- Format haven't matter, library will delete all non alpha-numeric symbols -->
+    <const name="PHONE_NUMBER1" value=""/>
+    <const name="PHONE_NUMBER2" value=""/>
+    <const name="PHONE_NUMBER3" value=""/>
+    <!-- Setup of network IDs. Ideally to pass registration methods test should be unique every run -->
+    <const name="NETWORK_ID1" value="api-test-user-1"/>
+    <const name="NETWORK_ID2" value="api-test-user-2"/>
+    <const name="NETWORK_ID3" value="api-test-user-3"/>
+</php>
+<listeners>
+  <!-- This listener helps to control and pause some tests (regisrtation, conference calls, etc)
+  as phpunit doesn't have good native support of control test execution -->
+  <listener class="TestListener" file="TestListener.php"></listener>
+</listeners>
+</phpunit>
